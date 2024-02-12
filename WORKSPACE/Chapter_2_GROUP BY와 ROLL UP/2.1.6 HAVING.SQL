@@ -1,0 +1,7 @@
+-- 고객ID, 지불유형별 주문금액이 만원 이상인 데이터만 조회
+
+SELECT CUS_ID, PAY_TP, SUM(ORD_AMT)
+FROM T_ORD
+GROUP BY CUS_ID, PAY_TP
+HAVING SUM(ORD_AMT) >= 10000
+;
